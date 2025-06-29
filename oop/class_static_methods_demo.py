@@ -1,25 +1,14 @@
-# polymorphism_demo.py
+class Calculator:
+    calculation_type = "Arithmetic Operations"
 
-import math
+    @staticmethod
+    def add(a, b):
+        """Return the sum of a and b."""
+        return a + b
 
-class Shape:
-    def area(self):
-        raise NotImplementedError("Subclasses must implement this method")
-
-
-class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-
-    def area(self):
-        return self.length * self.width
-
-
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return math.pi * self.radius ** 2
+    @classmethod
+    def multiply(cls, a, b):
+        """Return the product of a and b, and print the calculation type."""
+        print(f"Calculation type: {cls.calculation_type}")
+        return a * b
 
